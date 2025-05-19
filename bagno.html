@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bagno</title>
+  <link rel="stylesheet" href="generali.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="bagnocontemporaneo.html" class="slide-link">
+        <img src="img/CAROSELLI/bagno-contemporaneo.jpeg" alt="Bagno Contemporanea">
+        <span class="caption">Bagno Contemporaneo</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="bagnominimal.html" class="slide-link">
+        <img src="img/CAROSELLI/bagno-minimal.jpeg" alt="Bagno Minimal">
+        <span class="caption">Bagno Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="bagnoindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/bagno-industriale.jpeg" alt="Bagno Industriale">
+        <span class="caption">Bagno Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cucinaclassica.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-classica.jpeg" alt="Bagno Classica">
+        <span class="caption">Bagno Classico</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+<section class="stile-container">
+  <div class="background-overlay"></div>
+
+  <div class="stile-wrapper">
+    <div class="stile-content">
+      <h2>Il Bagno: Un'Opera di Design e Benessere</h2>
+      <div class="elegant-separator"></div> 
+
+      <p>
+        Il bagno è uno degli ambienti più intimi e significativi di ogni spazio abitativo o ricettivo. Più di una semplice stanza funzionale, 
+        rappresenta un luogo dedicato alla cura personale, al benessere e al relax quotidiano.
+      </p>
+
+      <p>
+        Un bagno ben progettato integra armoniosamente estetica e funzionalità: dalla scelta dei materiali alla disposizione degli arredi, 
+        ogni dettaglio contribuisce a creare un'atmosfera accogliente e raffinata.
+      </p>
+
+      <p>
+        L'attenzione al design del bagno rispecchia la crescente consapevolezza di quanto il nostro spazio personale influisca sul nostro benessere.</p> 
+       
+        <p> Dalle linee eleganti delle vasche da bagno freestanding ai raffinati piani lavabo in pietra o marmo, ogni dettaglio è pensato 
+        per creare un ambiente che soddisfa le necessità quotidiane e diventa un angolo di piacere visivo e sensoriale.
+      </p>
+    </div>
+
+    <aside class="stile-sidebar">
+      <h3>Curiosità e consigli</h3>
+      <p>
+        Le tendenze attuali prevedono l’uso di materiali naturali, come il legno, il marmo, il vetro e la ceramica, 
+        viene accostato con soluzioni innovative che ottimizzano l'uso degli spazi, creando ambienti funzionali ma senza rinunciare alla bellezza.
+      </p>
+      <p>
+        L'illuminazione gioca un ruolo fondamentale in questo contesto, con faretti e luci a led che, integrati con maestria, amplificano l'atmosfera di intimità e relax, 
+        trasformando il bagno in una vera oasi di tranquillità.
+      </p>
+    </aside>
+  </div>
+</section>
+
+
+
+
+<section class="ambienti">
+  <h2>Bagno nei diversi stili </h2>
+  <div class="ambienti-grid">
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CLASSICO/Bagno 10.jpeg" alt="Immagine 1">
+      </div>
+      <div class="ambiente-info">
+        <h3>Bagno Ciliegio</h3>
+        <p>Un bagno elegantemente rifinito, con marmi bianchi e lussuosi, alternati a carta da parati sui toni champagne. 
+          Al centro una grande vasca idromassaggio, perfetta per concedersi momenti di puro relax.</p>
+        <a href="bagnoclassico.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CONTEMPORANEO/bagno 1.2.jpeg" alt="Immagine 2">
+      </div>
+      <div class="ambiente-info">
+        <h3>Bagno Essenza</h3>
+        <p>Bagno moderno e accessoriato con dettagli raffinati. 
+          Le grandi piastrelle con toni neutri contrastano con il pavimento in legno scuro aggiungendo calore e personalità all'ambiente.</p>
+        <a href="bagnocontemporaneo.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE INDUSTRIALE/bagno 1.9.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Bagno Acqua e Forma</h3>
+        <p>Un bagno moderno e luminoso dotato di grande finestra sul tetto, che lascia entrare molta luce naturale. 
+          Il design è essenziale e contemporaneo, caratterizzato da tonalità neutre e materiali raffinati.</p>
+        <a href="bagnoindustriale.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE MINIMAL/bagno 2.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Bagno Soft Minimal</h3>
+        <p>Un bagno che punta sull’essenzialità e sul design pulito, per chi cerca praticità e stile.</p>
+        <a href="bagnominimal.html" class="btn-progetto">Scopri di più</a>
+      </div>
+
+  </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucina.html">Cucina</a></li>
+                <li><a href="soggiorno.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>
+      
+</html>

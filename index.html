@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GGM Design</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  
+  
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+
+
+
+<section class="sezione-immagine">
+  <div class="overlay"></div>
+  <div class="contenuto">
+    <h1>Dove stile incontra funzionalità</h1>
+  </div>
+</section>
+
+<main>
+  <!-- Guida agli Ambienti -->
+  <section class="guida-ambienti">
+    <div class="container">
+      <div class="guida-content">
+        <h2>GGM Design, la tua guida agli ambienti</h2>
+        <p>
+          GGM Design è una community esclusiva dedicata agli appassionati 
+          e ai professionisti del mondo dell'interior design, 
+          con l'obiettivo di esplorare e approfondire le caratteristiche distintive dei diversi ambienti e stili di arredamento.</p>
+
+          <p>La nostra missione è fornire una piattaforma informativa e creativa, 
+            dove ogni membro possa trovare ispirazione, soluzioni pratiche
+           e consulenze specializzate per progettare spazi che siano esteticamente piacevoli e funzionalmente ottimizzati.</p>
+
+          <p>In GGM Design, ci concentriamo su una vasta gamma di tematiche legate all’interior design, 
+          dalle tecniche di arredamento agli aspetti più specifici legati alla scelta di materiali, colori e arredi. 
+
+         <p> Approfondiamo le peculiarità dei vari ambienti, come soggiorni, cucine, 
+          camere da letto, uffici e spazi commerciali, 
+          analizzando come ogni ambiente può essere valorizzato per rispondere alle esigenze di chi lo vive.</p>
+          
+            
+            <p>Ti mostriamo le migliori ispirazioni per i tuoi ambienti. </p>
+       
+        <a href="interior.html" class="btn-glow">Scopri di più</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design per ogni stile -->
+  <section class="design-x-stile">
+    <h6 class="titolo-mini">Esplora</h6>
+    <h2 class="titolo-stile">I nostri stili</h2>
+  
+    <div class="stili-wrapper">
+      <div class="stile-box">
+        <img src="img/HOME PAGE IMM/icona-stile-classico.png" alt="Stile Classico">
+        <h3>Stile Classico</h3>
+        <a href="classico.html">Scopri di più</a>
+      </div>
+  
+      <div class="stile-box">
+        <img src="img/HOME PAGE IMM/icona-stile-industriale.jpg" alt="Stile Moderno">
+        <h3>Stile Industriale</h3>
+        <a href="industriale.html">Scopri di più</a>
+      </div>
+      <div class="stile-box">
+        <img src="img/HOME PAGE IMM/icona-stile-minimal.jpeg" alt="Stile Moderno">
+        <h3>Stile Minimal</h3>
+        <a href="minimal.html">Scopri di più</a>
+      </div>
+      <div class="stile-box">
+        <img src="img/HOME PAGE IMM/icona-stile-contemporaneo.jpg" alt="Stile Moderno">
+        <h3>Stile Contemporaneo</h3>
+        <a href="contemporaneo.html">Scopri di più</a>
+      </div>
+      
+    </div>
+  </section>
+  
+  <h2 class="titolo-ambiente">Ambienti</h2> 
+  <div class="ambienti-wrapper">   
+    <div class="ambiente-box">
+      
+      <a href="bagno.html">
+        <img src="img/HOME PAGE IMM/icona-bagno.png" alt="Bagno" class="ambiente-icon"/>
+        <p>Bagno</p>
+      </a>
+    </div>
+    <div class="ambiente-box">
+      <a href="camera.html">
+        <img src="img/HOME PAGE IMM/icona-camera.png" alt="Camera da letto" class="ambiente-icon"/>
+        <p>Camera da letto</p>
+      </a>
+    </div>
+    <div class="ambiente-box">
+      <a href="cameretta.html">
+        <img src="img/HOME PAGE IMM/icona-cameretta.png" alt="Cameretta" class="ambiente-icon"/>
+        <p>Cameretta</p>
+      </a>
+    </div>
+    <div class="ambiente-box">
+      <a href="cucina.html">
+        <img src="img/HOME PAGE IMM/icona-cucina.png" alt="Cucina" class="ambiente-icon"/>
+        <p>Cucina</p>
+      </a>
+    </div>
+    <div class="ambiente-box">
+      <a href="saladapranzo.html">
+        <img src="img/HOME PAGE IMM/icona-salapranzo.png" alt="Sala da pranzo" class="ambiente-icon"/>
+        <p>Sala da pranzo</p>
+      </a>
+    </div>
+    <div class="ambiente-box">
+      <a href="soggiorno.html">
+        <img src="img/HOME PAGE IMM/icona-salotto.png" alt="Soggiorno" class="ambiente-icon"/>
+        <p>Soggiorno</p>
+      </a>
+    </div>
+  </div>
+  
+  
+ 
+
+  <h6 class="titolo-ambienti">Esplora</h6>
+    <h2 class="ambienti-stile">Ambienti in evidenza</h2>
+
+  <!-- Ambienti in evidenza -->
+  <section class="ambienti-evidenza">
+    <div class="container">
+      
+      <div class="ambienti-grid">
+      
+        <div class="card-ambiente">
+          <div class="img-container">
+            <img src="img/CAROSELLI/cucina-classica.jpeg" alt="Cucina Provenza" />
+          </div>
+          <div class="ambiente-info">
+            <h3>Cucina Provenza</h3>
+            <p>Le cucine classiche uniscono semplicità e intramontabile eleganza, non rinunciano alle comodità,
+               agli elettrodomestici di ultima generazione e ai pezzi di grande design, creando un ambiente di grande effetto.</p>
+            <a href="cucinaclassica.html" class="btn-progetto">Progetto completo →</a>
+          </div>
+        </div>
+        <div class="card-ambiente">
+          <div class="img-container">
+            <img src="img/CAROSELLI/salotto-minimal.jpeg" alt="Cucina Provenza" />
+          </div>
+          <div class="ambiente-info">
+            <h3>Salotto minimal line</h3>
+            <p>Un ambiente elegante e tranquillo, in cui risalta una scala sospesa. 
+              Spazi aperti, arredi essenziali e una palette di colori neutri, il luogo perfetto dove il design si fonde con la funzionalità.</p>
+            <a href="salottominimal.html" class="btn-progetto">Progetto completo →</a>
+          </div>
+        </div>
+        <div class="card-ambiente">
+          <div class="img-container">
+            <img src="img/CAROSELLI/cucina-industriale.jpeg" alt="Cucina Provenza" />
+          </div>
+          <div class="ambiente-info">
+            <h3>Cucina Bricks</h3>
+            <p>Una cucina industriale di grande effetto, separata da una grande vetrata con riporti neri. 
+              Eleganti piastrelle nere e bianche caratterizzano l’intera cucina, che riprende i colori del legno e del grigio.</p>
+            <a href="cucinaindustriale.html" class="btn-progetto">Progetto completo →</a>
+          </div>
+        </div>
+        <div class="card-ambiente">
+          <div class="img-container">
+            <img src="img/CAROSELLI/cucina-classica.jpeg" alt="Cucina Provenza" />
+          </div>
+          <div class="ambiente-info">
+            <h3>Camera da letto fiori di seta</h3>
+            <p>Camera da letto raffinata e accogliente, con una parete decorata da un elegante motivo floreale che crea un'atmosfera rilassante.
+               L'arredamento con tonalità naturali e dettagli di design, enfatizza la luminosità dello spazio.</p>
+            <a href="cameracontemporanea.html" class="btn-progetto">Progetto completo →</a>
+          </div>
+        </div>
+        <div class="card-ambiente">
+          <div class="img-container">
+            <img src="img/CAROSELLI/cameretta-classica.jpeg" alt="Cucina Provenza" />
+          </div>
+          <div class="ambiente-info">
+            <h3>Cameretta Camilla</h3>
+            <p>Una cameretta soppalcata, con toni pastello. Una parete con trama interamente dipinta a mano fa da protagonista, 
+              rendendo l’ambiente caldo e accogliente, perfetto per un neonato e comodo per i neogenitori.</p>
+            <a href="camerettaclassica.html" class="btn-progetto">Progetto completo →</a>
+          </div>
+        </div>
+        <div class="card-ambiente">
+          <div class="img-container">
+            <img src="img/CAROSELLI/bagno-minimal.jpeg" alt="Cucina Provenza" />
+          </div>
+          <div class="ambiente-info">
+            <h3>Bagno soft minimal</h3>
+            <p>Le cucine classiche uniscono semplicità e intramontabile eleganza...</p>
+            <a href="bagnominimal.html" class="btn-progetto">Progetto completo →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+ 
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Ambienti</h4>
+        <ul>
+          <li><a href="cucina.html">Cucina</a></li>
+          <li><a href="soggiorno.html">Soggiorno</a></li>
+          <li><a href="cameretta.html">Cameretta</a></li>
+          <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+          <li><a href="camera.html">Camera da letto</a></li>
+          <li><a href="bagno.html">Bagno</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-column">
+        <h4>Stili</h4>
+        <ul>
+          <li><a href="classico.html">Classico</a></li>
+          <li><a href="contemporaneo.html">Contemporaneo</a></li>
+          <li><a href="minimal.html">Minimal</a></li>
+          <li><a href="industriale.html">Industriale</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  

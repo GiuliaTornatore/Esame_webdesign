@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GGM Design</title>
+  <link rel="stylesheet" href="stili.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+ 
+</head>
+<body>
+  
+
+ 
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="camerettaclassica.html" class="slide-link">
+        <img src="img/CAROSELLI/cameretta-classica.jpeg" alt="Cameretta Classica">
+        <span class="caption">Cameretta Classica</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cameraclassica.html" class="slide-link">
+        <img src="img/CAROSELLI/camera-classica.jpeg" alt="Camera da letto Classica">
+        <span class="caption">Camera da letto Classica</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cucinaclassica.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-classica.jpeg" alt="Cucina Classica">
+        <span class="caption">Cucina Classica</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="salottoModigliani.html" class="slide-link">
+        <img src="img/CAROSELLI/salotto-classico.jpeg" alt="Soggiorno Classico">
+        <span class="caption">Soggorno Classico</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+
+
+
+ 
+
+<section class="stile-container">
+  <div class="stile-content mx-5 px-4">
+      <h2>Stile Classico</h2>
+      
+      <p>
+        Lo stile classico rappresenta una delle espressioni più eleganti e intramontabili del design d’interni. 
+        Affonda le sue radici nella cultura greco-romana e si è evoluto nei secoli attraverso le influenze rinascimentali, barocche e neoclassiche, 
+        mantenendo sempre una forte identità basata sull’equilibrio, la simmetria e il senso della proporzione. 
+          <br><br>
+          È uno stile che comunica solidità, prestigio e raffinatezza, ed è particolarmente apprezzato da chi ama circondarsi di ambienti ricchi di storia e significato.
+          <br><br>
+          Negli interni classici, nulla è lasciato al caso. Gli spazi sono ampi, armoniosi e strutturati con grande attenzione ai dettagli architettonici: 
+          cornici, colonne, modanature e boiserie donano profondità e carattere agli ambienti.
+      </p>
+  </div>
+
+  <aside class="stile-sidebar">
+      <h3>Curiosità e consigli utili</h3>
+      <p>
+        I materiali scelti sono di alta qualità e spesso naturali, come il marmo, il legno massello, il bronzo o il velluto, mentre la palette cromatica tende
+         a colori neutri e sofisticati—bianco avorio, crema, beige, tortora, oro antico—che contribuiscono a creare un’atmosfera calda e accogliente.
+      </p>
+      <p>
+        Ogni elemento ha una funzione estetica e simbolica: nulla è puramente decorativo, tutto contribuisce a raccontare una storia di gusto e tradizione.
+      </p>
+  </aside>
+</section>
+
+
+<section class="stile-classico-elegante">
+  <div class="contenitore-introduzione">
+    <h2>Il Fascino del Design Classico</h2>
+    <p>Lo stile classico è un tributo all’eleganza senza tempo. Armonia, simmetria, materiali pregiati e dettagli raffinati rendono ogni 
+      spazio accogliente e maestoso, capace di attraversare le mode mantenendo intatta la sua bellezza.</p>
+  </div>
+
+  <div class="contenitore-elegante">
+    <div class="dettaglio-elegante">
+      <h3>Proporzioni e Simmetria</h3>
+      <p>Linee bilanciate e composizioni simmetriche creano ordine visivo e stabilità, trasmettendo una sensazione di armonia e perfezione.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Materiali Nobili e Pregiati</h3>
+      <p>Marmo, legno intagliato, velluti e bronzo si combinano per arricchire l’ambiente con eleganza e solidità.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Mobili Eleganti e Raffinati</h3>
+      <p>Arredi dallo stile classico, con dettagli decorativi, intarsi e tessuti ricercati, esprimono lusso e artigianalità.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Colori Sobri e Caldi</h3>
+      <p>Tonalità come avorio, crema, beige, grigio perla e legno caldo creano un’atmosfera luminosa e avvolgente.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Atmosfera Intima e Rilassante</h3>
+      <p>L’equilibrio tra estetica e comfort rende ogni ambiente accogliente, dove il tempo sembra rallentare.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Illuminazione Soft e Calda</h3>
+      <p>Lampadari in cristallo, applique in bronzo e luci calde creano un’illuminazione diffusa e avvolgente.</p>
+    </div>
+  </div>
+</section>
+
+<section class="altri-ambienti">
+  <h2>Scopri insieme a noi altri ambienti</h2>
+  <div class="ambienti-container">
+   
+    <div class="ambiente-card">
+      <img src="img/STILE CLASSICO/Bagno 6.jpeg" alt="Cucina Provenza">
+      <div class="ambiente-info">
+        <span>Bagno Ciliegio</span>
+        <a href="bagnoclassico.html" class="arrow-link">→</a>
+      </div>
+    </div>
+
+    
+    <div class="ambiente-card">
+      <img src="img/STILE CLASSICO/Camera da letto 2.1.jpeg" alt="Salotto Modigliani">
+      <div class="ambiente-info">
+        <span>Camera da letto mosaico blu</span>
+        <a href="cameraclassica.html" class="arrow-link">→</a>
+      </div>
+    </div>
+
+    
+    <div class="ambiente-card">
+      <img src="img/STILE CLASSICO/Sala da pranzo 4.jpeg" alt="Sala da pranzo color vintage">
+      <div class="ambiente-info">
+        <span>Sala da prando color vintage</span>
+        <a href="saladapranzoclassica.html" class="arrow-link">→</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucina.html">Cucina</a></li>
+                <li><a href="soggiorno.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>
+      
+</html>

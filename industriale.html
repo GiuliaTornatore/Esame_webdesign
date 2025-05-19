@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GGM Design</title>
+  <link rel="stylesheet" href="stili.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+ 
+</head>
+<body>
+  
+  
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="cucinaindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-industriale.jpeg" alt="Cucina Industriale">
+        <span class="caption">Cucina Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="camerettaindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/cameretta-industriale.jpeg" alt="Cameretta Industriale">
+        <span class="caption">Cameretta Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="bagnoindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/bagno-industriale.jpeg" alt="bagno-industriale">
+        <span class="caption">Bagno Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="salottoindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/salotto-industriale.jpeg" alt="Soggiorno Industriale">
+        <span class="caption">Soggorno Industriale</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+ 
+<section class="stile-container">
+  <div class="stile-content mx-5 px-4">
+      <h2>Stile Industriale</h2>
+      
+      <p>
+        Lo stile industriale nasce nelle metropoli americane degli anni '50, quando vecchie fabbriche e magazzini dismessi venivano riconvertiti in spazi abitativi.
+          <br><br>
+          Questo contesto ha dato origine a un’estetica cruda e autentica,
+          che ancora oggi affascina per la sua forte personalità e il suo legame con il mondo della produzione, dell’artigianato e dell’architettura urbana.
+          <br><br>
+          Gli interni in stile industriale sono caratterizzati da un uso predominante di materiali grezzi e strutture a vista: 
+          mattoni, cemento, acciaio, ferro, legno invecchiato, tubature e travi lasciate esposte diventano veri e propri elementi decorativi. 
+      </p>
+  </div>
+
+  <aside class="stile-sidebar">
+      <h3>Tendenze</h3>
+      <p>
+        Le palette cromatiche sono solitamente scure e terrose—grigi, neri, ruggine, 
+        marroni—e si accostano a tonalità più neutre per bilanciare l’intensità visiva.
+      </p>
+      <p>
+        Lo stile industriale è ideale per chi ama ambienti dal carattere deciso, vissuto e autentico, 
+        ma allo stesso tempo desidera un’atmosfera accogliente e ricercata.
+      </p>
+  </aside>
+</section>
+
+<section class="stile-classico-elegante">
+  <div class="contenitore-introduzione">
+    <h2>Il Fascino del Design Industriale</h2>
+    <p>Lo stile industriale unisce l’aspetto grezzo dei materiali con l’eleganza della funzionalità. 
+      Metallo, legno, mattoni a vista e dettagli minimalisti si combinano per creare ambienti moderni, fortemente caratterizzati e di grande impatto.</p>
+  </div>
+
+  <div class="contenitore-elegante">
+    <div class="dettaglio-elegante">
+      <h3>Materiali Grezzi e Naturali</h3>
+      <p>Il cemento, il metallo, il legno recuperato e i mattoni a vista sono protagonisti, creando uno stile robusto e senza tempo, ma con un tocco di classe.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Colori Scuri e Neutri</h3>
+      <p>Le tonalità di grigio, nero e marrone scuro dominano l’ambiente, mentre accenti metallici o in legno chiaro bilanciano il tutto, 
+        mantenendo l’aspetto visivo elegante e sofisticato.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Illuminazione Industriale</h3>
+      <p>La luce è un elemento fondamentale, con lampade a sospensione in metallo, faretti industriali 
+        e luci calde che esaltano l'atmosfera cruda ma raffinata dell'ambiente.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Arredi Minimal e Funzionali</h3>
+      <p>Gli arredi sono essenziali, realizzati con materiali durevoli e funzionali. 
+        Mobili in metallo e legno recuperato si combinano con linee semplici e pulite per non sovraccaricare lo spazio.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Spazi Aperti e Condivisi</h3>
+      <p>Lo stile industriale favorisce spazi ampi e aperti, con poca separazione tra le aree funzionali, creando un ambiente fluido e accogliente.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Dettagli Vintage e Artigianali</h3>
+      <p>Oggetti di recupero, come scaffali in metallo e arredi vintage, aggiungono carattere e personalità, mescolando il vecchio e il nuovo per un effetto unico.</p>
+    </div>
+  </div>
+</section>
+
+<section class="altri-ambienti">
+  <h2>Scopri insieme a noi altri ambienti</h2>
+  <div class="ambienti-container">
+   
+    <div class="ambiente-card">
+      <img src="img/STILE INDUSTRIALE/bagno 1.5.jpeg" alt="Cucina Provenza">
+      <div class="ambiente-info">
+        <span>Bagno Acqua e Forma</span>
+        <a href="bagnoindustriale.html" class="arrow-link">→</a>
+      </div>
+    </div>
+
+    
+    <div class="ambiente-card">
+      <img src="img/STILE INDUSTRIALE/camera da letto 2.2.jpeg" alt="Salotto Modigliani">
+      <div class="ambiente-info">
+        <span>Camera da letto urban</span>
+        <a href="cameraindustriale.html" class="arrow-link">→</a>
+      </div>
+    </div>
+
+    
+    <div class="ambiente-card">
+      <img src="img/STILE INDUSTRIALE/sala da pranzo 1.jpeg" alt="Sala da pranzo color vintage">
+      <div class="ambiente-info">
+        <span>Sala da prando bistrot</span>
+        <a href="saladapranzoindustriale.html" class="arrow-link">→</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucina.html">Cucina</a></li>
+                <li><a href="soggiorno.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>
+      
+</html>

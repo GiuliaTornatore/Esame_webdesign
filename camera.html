@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera da letto</title>
+  <link rel="stylesheet" href="generali.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="cameracontemporanea.html" class="slide-link">
+        <img src="img/CAROSELLI/camera-contemporanea.jpeg" alt="Camera da letto Contemporanea">
+        <span class="caption">Camera da letto Contemporanea</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cameraminimal.html" class="slide-link">
+        <img src="img/CAROSELLI/camera-minimal.jpeg" alt="Camera da letto Minimal">
+        <span class="caption">Camera da letto Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cameraindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/camera-industriale.jpeg" alt="Camera da letto Industriale">
+        <span class="caption">Camera da letto Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cameraclassica.html" class="slide-link">
+        <img src="img/CAROSELLI/camera-classica.jpeg" alt="Camera da letto Classica">
+        <span class="caption">Camera da letto Classica</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+<section class="stile-container">
+  <div class="background-overlay"></div>
+
+  <div class="stile-wrapper">
+    <div class="stile-content">
+      <h2>Camera da Letto: Il Cuore del Relax</h2>
+      <div class="elegant-separator"></div> 
+
+      <p>
+        La camera da letto è il luogo più intimo della casa, uno spazio dedicato al riposo, alla serenità e all’equilibrio personale. 
+    Progettare una zona notte richiede attenzione ai dettagli, equilibrio cromatico e materiali che favoriscano il benessere.
+      </p>
+
+      <p>
+        Il nostro approccio combina estetica e funzionalità: dalle linee essenziali dello stile moderno alle atmosfere avvolgenti dello stile classico, 
+        ogni proposta è studiata per riflettere la personalità di chi vive lo spazio. 
+        Illuminazione calda, tessuti morbidi e soluzioni su misura trasformano la camera in un rifugio esclusivo.
+      </p>
+
+      <p>
+        Il nostro approccio combina estetica e funzionalità: dalle linee essenziali dello stile moderno alle atmosfere avvolgenti dello stile classico, 
+        ogni proposta è studiata per riflettere la personalità di chi vive lo spazio. 
+        Illuminazione calda, tessuti morbidi e soluzioni su misura trasformano la camera in un rifugio esclusivo.</p> 
+
+        <p>
+          <p>
+            Il nostro approccio combina estetica e funzionalità: dalle linee essenziali dello stile moderno alle atmosfere avvolgenti dello stile classico, 
+            ogni proposta è studiata per riflettere la personalità di chi vive lo spazio. 
+            Illuminazione calda, tessuti morbidi e soluzioni su misura trasformano la camera in un rifugio esclusivo.</p> </p> 
+       
+      
+    </div>
+
+    <aside class="stile-sidebar">
+      <h3>Curiosità e consigli utili</h3>
+      <p>
+        L’illuminazione gioca un ruolo fondamentale nella creazione dell’atmosfera giusta. Una luce calda e diffusa, magari regolabile, aiuta a rilassarsi prima di dormire, 
+        mentre luci più focalizzate su elementi decorativi o sulle pareti possono aggiungere un tocco di raffinatezza.
+      <p>
+        L’uso di mobili dalle linee pulite e l’inserimento di soluzioni di storage intelligente contribuiscono a mantenere l’ambiente ordinato e rilassante.
+      </p>
+    </aside>
+  </div>
+</section>
+
+
+
+
+<section class="ambienti">
+  <h2>Camera da letto nei diversi stili</h2>
+  <div class="ambienti-grid">
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CLASSICO/Camera da letto 2.1.jpeg"alt="Immagine 1">
+      </div>
+      <div class="ambiente-info">
+        <h3>Camera da letto mosaico blu</h3>
+        <p>La camera da letto deve essere prima di tutto un luogo di comfort. </p>
+        <a href="cameraclassica.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CONTEMPORANEO/camera da letto 1.1.jpeg" alt="Immagine 2">
+      </div>
+      <div class="ambiente-info">
+        <h3>Camera da letto fiori di seta</h3>
+        <p>L'uso di arredi funzionali, come comodini e armadi ben progettati, contribuisce a mantenere l'ordine e 
+          facilitare l'accesso agli oggetti essenziali senza compromettere lo spazio.</p>
+        <a href="cameracontemporanea.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE INDUSTRIALE/camera da letto 1.1.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Camera da letto urban</h3>
+        <p>L'illuminazione è cruciale in una camera da letto, creando l’atmosfera giusta per il relax e il sonno.</p>
+        <a href="cameraindustriale.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE MINIMAL/camera da letto 2.3.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Camera da letto Eclisse</h3>
+        <p>Una luce calda e diffusa, magari con luci regolabili, aiuta a distendersi durante la sera, 
+          mentre luci focalizzate su elementi decorativi o per la lettura aggiungono praticità ed eleganza.</p>
+        <a href="cameraminimal.html" class="btn-progetto">Scopri di più</a>
+      </div>
+
+  </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucina.html">Cucina</a></li>
+                <li><a href="soggiorno.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>
+      
+</html>

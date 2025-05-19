@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soggiorno</title>
+  <link rel="stylesheet" href="generali.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="salottominimal.html" class="slide-link">
+        <img src="img/CAROSELLI/salotto-minimal.jpeg" alt="Soggiorno Minimal">
+        <span class="caption">Soggiorno Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="salottoModigliani.html" class="slide-link">
+        <img src="img/CAROSELLI/salotto-classico.jpeg" alt="Soggiorno Classico">
+        <span class="caption">Soggiorno Classico</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="salottocontemporaneo.html" class="slide-link">
+        <img src="img/CAROSELLI/saladapranzo-contemporanea.jpeg" alt="Soggiorno Contemporaneo">
+        <span class="caption">Soggiorno Contemporaneo</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="salottoindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/saladapranzo-classica.jpeg" alt="Soggiorno Industriale">
+        <span class="caption">Soggiorno Industriale</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+
+<section class="stile-container">
+  <div class="background-overlay"></div>
+
+  <div class="stile-wrapper">
+    <div class="stile-content">
+      <h2>Soggiorno:l'anima accogliente della casa</h2>
+      <div class="elegant-separator"></div> 
+
+      <p>
+        Il soggiorno, spesso definito anche come salotto o living room, rappresenta uno degli ambienti più iconici e vissuti di una casa. 
+        Non è soltanto uno spazio fisico, ma un vero e proprio simbolo di accoglienza, condivisione e stile di vita.
+      </p>
+
+      <p>
+        È il cuore pulsante dell’abitazione, dove si intrecciano momenti di relax e socialità, dove si accolgono gli ospiti, 
+        si trascorre del tempo con la famiglia o semplicemente ci si ritaglia una pausa tutta per sé.
+      </p>
+
+      <p>
+        Storicamente, il soggiorno nasce come evoluzione delle grandi sale di ricevimento delle case nobiliari, dove si esibiva il meglio dell’arredamento e dell’arte domestica. Oggi ha assunto un ruolo più intimo e versatile, 
+        ma conserva ancora quella vocazione alla rappresentanza. 
+        È uno spazio che deve parlare di chi lo abita: raccontarne gusti, abitudini e aspirazioni estetiche.</p> 
+
+        <p>
+         
+      
+      
+    </div>
+
+  <aside class="stile-sidebar">
+      <h3>Curiosità e consigli utili</h3>
+    
+        <p>Un soggiorno può assumere mille forme, a seconda della metratura disponibile e delle esigenze di chi lo vive. 
+          Può essere un ambiente separato oppure parte di un open space che integra cucina e zona pranzo.
+      </p>
+      <p>Nell’interior design moderno, il soggiorno viene progettato per massimizzare comfort, funzionalità ed estetica.</p>
+       
+      <p>L’uso sapiente della luce naturale, la scelta dei materiali, la disposizione dei mobili e il gioco tra pieni e vuoti sono elementi fondamentali per creare un’atmosfera armoniosa e accogliente.
+        </p>
+  </aside>
+</section>
+
+<section class="ambienti">
+  <h2>Salotto nei diversi stili </h2>
+  <div class="ambienti-grid">
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CLASSICO/Salotto 6.jpeg" alt="Immagine 1">
+      </div>
+      <div class="ambiente-info">
+        <h3>Salotto Modigliani</h3>
+        <p>C’è un luogo, in ogni casa, dove tutto prende forma. Dove si inizia la giornata con una tazza di caffè e la si conclude con un film, una chiacchierata, un abbraccio.</p>
+        <a href="salottoModigliani.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE INDUSTRIALE/soggiorno 1.5.jpeg" alt="Immagine 2">
+      </div>
+      <div class="ambiente-info">
+        <h3>Salotto Industrial loft</h3>
+        <p>La sala da pranzo, come ambiente a sé stante, nasce in epoca rinascimentale nelle dimore aristocratiche europee, dove i banchetti erano veri e propri eventi sociali.</p>
+        <a href="salottoindustriale.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CONTEMPORANEO/soggiorno 1.6.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Salotto scala di luce</h3>
+        <p>È la zona di passaggio e allo stesso tempo di sosta. È dove ci si rilassa dopo una giornata piena, dove si ride con gli amici, dove si condividono sogni, piani, musica, silenzi.
+
+        </p>
+        <a href="salottocontemporaneo.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE MINIMAL/salotto 1.7.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Salotto minimal line</h3>
+        <p> Nel soggiorno convivono estetica e funzione. È il primo ambiente che gli ospiti vedono quando entrano in casa, e spesso anche quello che viviamo di più</p>
+        <a href="salottominimal.html" class="btn-progetto">Scopri di più</a>
+      </div>
+
+  </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+
+
+
+</body>
+
+
+ 
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucina.html">Cucina</a></li>
+                <li><a href="soggiorno.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>

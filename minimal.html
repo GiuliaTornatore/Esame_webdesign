@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GGM Design</title>
+  <link rel="stylesheet" href="stili.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+ 
+</head>
+<body>
+  
+ 
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+  
+
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="cucinaminimal.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-minimal.jpeg" alt="Cucina Minimal">
+        <span class="caption">Cucina Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="camerettaminimal.html" class="slide-link">
+        <img src="img/CAROSELLI/cameretta-minimal.jpeg" alt="Cameretta Minimal">
+        <span class="caption">Cameretta Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="bagnominimal.html" class="slide-link">
+        <img src="img/CAROSELLI/bagno-minimal.jpeg" alt="Bagno Minimal">
+        <span class="caption">Bagno Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="salottominimal.html" class="slide-link">
+        <img src="img/CAROSELLI/salotto-minimal.jpeg" alt="Soggiorno Minimal">
+        <span class="caption">Soggorno Minimal</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+ 
+<section class="stile-container">
+  <div class="stile-content mx-5 px-4">
+      <h2>Stile Minimal</h2>
+      
+      <p>
+        Il minimalismo non è solo un’estetica, ma una vera e propria filosofia dell’abitare che mette al centro l’essenziale, la funzionalità e la purezza delle forme. 
+        Lo stile minimal si basa sul principio del “meno è meglio” e si traduce in spazi ordinati, ariosi e privi di elementi superflui.
+          <br><br>
+          Ogni oggetto, mobile o finitura ha una ragione d’essere precisa e contribuisce all’armonia complessiva dell’ambiente.
+          <br><br>
+          L’interior design minimal predilige linee pulite, geometriche e nette, con un uso sapiente dello spazio vuoto, che diventa protagonista al pari degli arredi. 
+          I colori sono neutri e sobri—bianco, nero, grigio, tortora—e i materiali scelti spesso naturali, come il legno chiaro, 
+          il cemento, il vetro e l’acciaio, tutti utilizzati in modo da esaltare la semplicità e la qualità dei dettagli. 
+      </p>
+  </div>
+
+  <aside class="stile-sidebar">
+      <h3>Curiosità e consigi utili</h3>
+      <p>
+        L’illuminazione è studiata con attenzione, con fonti di luce discrete che valorizzano le forme senza invadere lo spazio.
+      </p>
+      <p>
+        Adatto a chi ama vivere in un ambiente ordinato, sobrio e altamente funzionale, lo stile minimal comunica rigore, calma e raffinatezza.
+      </p>
+  </aside>
+</section>
+
+<section class="stile-classico-elegante">
+  <div class="contenitore-introduzione">
+    <h2>Il Fascino del Design Minimal</h2>
+    <p>Il design minimalista si basa sulla semplicità e sull'essenzialità. Linee pulite, s
+      pazi aperti e colori neutri creano ambienti tranquilli e moderni, dove la funzionalità si unisce alla bellezza.</p>
+  </div>
+
+  <div class="contenitore-elegante">
+    <div class="dettaglio-elegante">
+      <h3>Proporzioni e Simmetria</h3>
+      <p>Ogni elemento del design minimalista è scelto per la sua funzionalità e per la sua forma semplice, senza decorazioni inutili o complessità.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Colori Neutri e Naturali</h3>
+      <p>Tonalità di bianco, nero, grigio e beige predominano, creando un ambiente che favorisce la calma e l'equilibrio, 
+        con un contrasto delicato tra le diverse superfici.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Spazi Ampi e Ordinati</h3>
+      <p>Lo stile minimalista enfatizza gli spazi aperti, senza sovraccaricare l’ambiente con oggetti o decorazioni, per creare un’atmosfera ariosa e rilassante.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Illuminazione Naturale</h3>
+      <p>La luce naturale è un elemento chiave, con ampie finestre che permettono alla luce di inondare l'ambiente, creando un'atmosfera serena e luminosa.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>ADettagli Funzionali</h3>
+      <p>Ogni oggetto ha una funzione specifica, senza elementi superflui. Ogni dettaglio è progettato per essere pratico, senza compromettere l'estetica minimalista.</p>
+    </div>
+
+    <div class="dettaglio-elegante">
+      <h3>Arredi Essenziali</h3>
+      <p>Ogni mobile è ridotto all’essenziale, con linee semplici, materiali di alta qualità e una funzionalità senza pari, creando spazi liberi da ingombri.</p>
+    </div>
+  </div>
+</section>
+
+<section class="altri-ambienti">
+  <h2>Scopri insieme a noi altri ambienti</h2>
+  <div class="ambienti-container">
+   
+    <div class="ambiente-card">
+      <img src="img/STILE MINIMAL/bagno 1.1.jpeg" alt="Cucina Provenza">
+      <div class="ambiente-info">
+        <span>Bagno soft minimal</span>
+        <a href="bagnominimal.html" class="arrow-link">→</a>
+      </div>
+    </div>
+
+    
+    <div class="ambiente-card">
+      <img src="img/STILE MINIMAL/camera da letto 2.jpeg" alt="Salotto Modigliani">
+      <div class="ambiente-info">
+        <span>Camera da letto soft minimal</span>
+        <a href="cameraminimal.html" class="arrow-link">→</a>
+      </div>
+    </div>
+
+    
+    <div class="ambiente-card">
+      <img src="img/STILE INDUSTRIALE/sala da pranzo 1.jpeg" alt="Sala da pranzo color vintage">
+      <div class="ambiente-info">
+        <span>Sala da pranzo legno e luce</span>
+        <a href="saladapranzoindustriale.html" class="arrow-link">→</a>
+      </div>
+    </div>
+  </div>
+</section>
+ 
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucine.html">Cucina</a></li>
+                <li><a href="salotti.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>
+      
+</html>

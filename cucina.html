@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera da letto</title>
+  <link rel="stylesheet" href="generali.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato&family=Playfair+Display&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+  
+ <header class="header">
+  <div class="container">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.png" alt="LOGO" class="logo-img">
+      </a>
+    </div>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav class="nav" id="mainNav">
+      <ul>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Ambienti</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="cucina.html" class="dropdown-item">Cucina</a></li>
+              <li><a href="soggiorno.html" class="dropdown-item">Soggiorno</a></li>
+              <li><a href="saladapranzo.html" class="dropdown-item">Sala da pranzo</a></li>
+              <li><a href="camera.html" class="dropdown-item">Camera da letto</a></li>
+              <li><a href="cameretta.html" class="dropdown-item">Cameretta</a></li>
+              <li><a href="bagno.html" class="dropdown-item">Bagno</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Stili</a>
+          <div class="dropdown">
+            <ul>
+              <li><a href="classico.html" class="dropdown-item">Classico</a></li>
+              <li><a href="minimal.html" class="dropdown-item">Minimal</a></li>
+              <li><a href="contemporaneo.html" class="dropdown-item">Contemporaneo</a></li>
+              <li><a href="industriale.html" class="dropdown-item">Industriale</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const hamburger = document.getElementById("hamburger");
+        const nav = document.getElementById("mainNav");
+        const navItems = document.querySelectorAll(".nav-item.has-dropdown");
+    
+        hamburger.addEventListener("click", () => {
+          nav.classList.toggle("active");
+        });
+    
+        navItems.forEach(item => {
+          const link = item.querySelector(".nav-link");
+    
+          link.addEventListener("click", e => {
+            if (window.innerWidth <= 768) {
+              e.preventDefault();
+              const isOpen = item.classList.contains("open");
+              navItems.forEach(i => i.classList.remove("open"));
+              if (!isOpen) item.classList.add("open");
+            }
+          });
+        });
+    
+        document.addEventListener("click", e => {
+          if (window.innerWidth <= 768 && !e.target.closest(".nav") && !e.target.closest(".hamburger")) {
+            nav.classList.remove("active");
+            navItems.forEach(i => i.classList.remove("open"));
+          }
+        });
+      });
+    </script>
+    
+  </header>
+  
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide active">
+      <a href="cucinacontemporanea.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-contemporanea.jpeg" alt="Cucina Contemporanea">
+        <span class="caption">Cucina Contemporanea</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cucinaminimal.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-minimal.jpeg" alt="Cucina Minimal">
+        <span class="caption">Cucina Minimal</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cucinaindustriale.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-industriale.jpeg" alt="Cucina Industriale">
+        <span class="caption">Cucina Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="cucinaclassica.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-classica.jpeg" alt="Cucina Classica">
+        <span class="caption">Cucina Classica</span>
+      </a>
+    </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll(".slide");
+
+  function moveSlide(n) {
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
+  }
+
+  // Facoltativo: autoplay
+  // setInterval(() => moveSlide(1), 5000);
+</script>
+
+
+<section class="stile-container">
+  <div class="background-overlay"></div>
+
+  <div class="stile-wrapper">
+    <div class="stile-content">
+      <h2>Cucina: il cuore domestico</h2>
+      <div class="elegant-separator"></div> 
+
+      <p>
+        La cucina è il cuore pulsante della casa, uno spazio dove funzionalità, estetica e comfort si incontrano per creare un ambiente vivo, 
+        dinamico e fortemente identitario. Progettare una cucina richiede attenzione all’organizzazione degli spazi, 
+        alla scelta dei materiali e allo stile, poiché ogni elemento ha un impatto diretto sull’esperienza quotidiana.
+      </p>
+
+      <p>
+        Il layout è uno degli aspetti più importanti: può svilupparsi in modo lineare, a L, a U, oppure prevedere una penisola o un’isola centrale, 
+        spesso usata anche come piano snack o zona conviviale. 
+        La distribuzione ottimale si basa sul cosiddetto triangolo ergonomico, che collega le tre aree fondamentali: zona cottura, zona lavaggio e zona conservazione.
+      </p>
+
+      <p>
+        Questa disposizione favorisce movimenti fluidi e migliora la praticità d’uso durante le attività quotidiane.</p> 
+
+        <p>
+          <p>
+            I materiali utilizzati devono essere resistenti, igienici e facili da manutenere. 
+            I top cucina possono variare dal laminato al quarzo, dal marmo all’acciaio, mentre le ante dei mobili spaziano tra legni, laccature e vetri.</p> 
+       
+      
+    </div>
+
+    <aside class="stile-sidebar">
+      <h3>Curiosità e consigli utili</h3>
+      <p>
+        Anche la scelta del pavimento e del paraschizzi contribuisce a definire 
+        il carattere dell’ambiente, alternando superfici lisce, piastrellate o continue a seconda dello stile desiderato.
+      <p>
+        L’illuminazione gioca un ruolo essenziale. Una luce generale diffusa viene spesso integrata con  punti luce funzionali,
+         come strip LED sotto i pensili o faretti direzionabili, utili per illuminare il piano di lavoro. 
+      </p>
+    </aside>
+  </div>
+</section>
+
+
+
+
+<section class="ambienti">
+  <h2>Cucina nei diversi stili</h2>
+  <div class="ambienti-grid">
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CLASSICO/Cucina 4.jpeg" lt="Immagine 2">
+      </div>
+      <div class="ambiente-info">
+        <h3>Cucina Provenza</h3>
+        <p>Le cucine classiche uniscono semplicità e intramontabile eleganza,
+           non rinunciano alle comodità, agli elettrodomestici di ultima generazione e ai pezzi di grande design, creando un ambiente di grande effetto.</p>
+        <a href="cucinaclassica.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE MINIMAL/cucina 1.1.jpeg" alt="Immagine 2">
+      </div>
+      <div class="ambiente-info">
+        <h3>Cucina Bauhaus</h3>
+        <p>Una cucina essenziale, dove ogni elemento è pensato per l'efficienza e la semplicità: 
+          linee pulite, materiali naturali e una palette neutra che crea un ambiente luminoso minimale.</p>
+        <a href="cucinaminimal.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE CONTEMPORANEO/cucina 1.1.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Cucina grigio quarzo</h3>
+        <p>Un ambiente elegante e accogliente, caratterizzato da linee pulite e materiali raffinati. 
+          Protagonista, l’angolo pranzo con sedute integrate e illuminazione a sospensione, che crea un’atmosfera intima e sofisticata.</p>
+        <a href="cucinacontemporanea.html" class="btn-progetto">Scopri di più</a>
+      </div>
+    </div>
+    <div class="card-ambiente">
+      <div class="img-container">
+        <img src="img/STILE INDUSTRIALE/cucina 1.1.jpeg" alt="Immagine 3">
+      </div>
+      <div class="ambiente-info">
+        <h3>Cucina Bricks</h3>
+        <p>Una cucina industriale di grande effetto, separata da una grande vetrata con riporti neri. 
+          Eleganti piastrelle nere e bianche caratterizzano l’intera cucina, che riprende i colori del legno e del grigio.</p>
+        <a href="cucinaindustriale.html" class="btn-progetto">Scopri di più</a>
+      </div>
+
+  </div>
+</section>
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-section">
+      <img src="img/logo.png" class="logo-small">
+      <ul class="footer-links">
+        <li><a href="privaci.html">Privacy</a></li>
+        <li><a href="termini.html">Condizioni</a></li>
+        <li><a href="index.html">Chi siamo</a></li>
+      </ul>
+    </div>
+  </div>
+
+      <footer>
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-column">
+              <h4>Ambienti</h4>
+              <ul>
+                <li><a href="cucina.html">Cucina</a></li>
+                <li><a href="soggiorno.html">Soggiorno</a></li>
+                <li><a href="cameretta.html">Cameretta</a></li>
+                <li><a href="saladapranzo.html">Sala da pranzo</a></li>
+                <li><a href="camera.html">Camera da letto</a></li>
+                <li><a href="bagno.html">Bagno</a></li>
+              </ul>
+            </div>
+        
+            <div class="footer-column">
+              <h4>Stili</h4>
+              <ul>
+                <li><a href="classico.html">Classico</a></li>
+                <li><a href="contemporaneo.html">Contemporaneo</a></li>
+                <li><a href="minimal.html">Minimal</a></li>
+                <li><a href="industriale.html">Industriale</a></li>
+              </ul>
+            </div>
+          </div>
+        </footer>
+      </body>
+      
+</html>
