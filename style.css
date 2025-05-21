@@ -1,43 +1,32 @@
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Lato', sans-serif;
-    background-color: #fdfdfd;
-    color: #222;
-    line-height: 1.8;
-  }
-  
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  /* header */
-
-
+/* Reset generale */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Corpo e base */
 body {
   font-family: 'Playfair Display', serif;
   background-color: #f8f9fa;
   color: #333;
+  line-height: 1.8;
 }
 
+/* Link */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Contenitore generico */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
 .header {
   background: linear-gradient(90deg, #1e1e1e, #2d2d2d);
   padding: 15px 0;
@@ -56,24 +45,14 @@ body {
   align-items: center;
 }
 
+/* Logo */
 .logo-img {
   height: 50px;
-}
-.logo a {
-  display: inline-block;
-}
-
-.logo-img {
-  display: block; 
-  max-height: 60px; 
+  display: block;
+  max-height: 60px;
 }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-
+/* Navigazione */
 .nav ul {
   list-style: none;
   display: flex;
@@ -97,6 +76,7 @@ body {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+/* Dropdown */
 .dropdown {
   position: absolute;
   top: 100%;
@@ -134,7 +114,7 @@ body {
   background-color: #444;
 }
 
-
+/* Hamburger menu */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -150,7 +130,7 @@ body {
   transition: all 0.3s ease;
 }
 
-
+/* Media query per dispositivi mobili */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -206,118 +186,104 @@ body {
   }
 }
 
-
-
-
-
-
+/* Sezioni */
 section {
-    padding: 80px 0;
-  }
-  
-  .text-center {
-    text-align: center;
-  }
-  
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #1e1e1e;
-    line-height: 1.3;
-  }
-  
-  h6.titolo-mini {
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    color: #999;
-    margin-bottom: 8px;
-    line-height: 1.6;
-  }
-  
-  
-  .guida-ambienti {
-    background-color: #111;
-    color: #fff;
-    padding: 100px 0;
-    line-height: 1.7;
-  }
-  
-  .guida-ambienti h2 {
-    color: #fff; 
-  }
-  
-  
-  .btn-glow {
-    display: inline-block;
-    margin-top: 20px;
-    background-color: #b18c5c;
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    text-decoration: none; 
-  }
-  
-  .btn-glow:hover {
-    background-color: #a3783f;
-  }
-  
-  
- * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 80px 0;
 }
 
-/* Stile generale della sezione */
-.design-x-stile {
-  background: linear-gradient(135deg, #868686, #a0a0a0); /* Sfondo con gradiente */
-  padding: 80px 20px;
-  font-family: 'Playfair Display', sans-serif;
+.text-center {
   text-align: center;
 }
 
 /* Titoli */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1e1e1e;
+  line-height: 1.3;
+}
+
+h6.titolo-mini {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+/* Guida ambienti */
+.guida-ambienti {
+  background-color: #111;
+  color: #fff;
+  padding: 100px 0;
+  line-height: 1.7;
+}
+
+.guida-ambienti h2 {
+  color: #fff;
+}
+
+/* Bottone */
+.btn-glow {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #b18c5c;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-glow:hover {
+  background-color: #a3783f;
+}
+
+/* Sezione Design */
+.design-x-stile {
+  background: linear-gradient(135deg, #868686, #a0a0a0);
+  padding: 80px 20px;
+  text-align: center;
+}
+
 .titolo-mini {
   font-size: 20px;
-  color: #eee; /* Miglior contrasto */
+  color: #eee;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
   margin-bottom: 10px;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Leggera ombra */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .titolo-stile {
   font-size: 40px;
-  color: #fff; /* Miglior contrasto */
+  color: #fff;
   font-weight: 700;
   margin-top: 10px;
   text-transform: capitalize;
   letter-spacing: 0.5px;
   margin-bottom: 40px;
-  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25); /* Ombra per leggibilità */
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.25);
 }
 
-/* Wrapper per i box degli stili */
+/* Wrapper per i box */
 .stili-wrapper {
- 
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: nowrap; /* Impedisce il ritorno a capo */
+  flex-wrap: nowrap;
   margin: 50px auto 0 auto;
   max-width: 700px;
   padding: 0 15px;
 }
 
-/* Stile per ogni box degli stili */
 .stile-box {
   background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Ombra più delicata */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center;
   padding: 20px;
@@ -330,10 +296,9 @@ section {
 
 .stile-box:hover {
   transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Hover più naturale */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Immagine */
 .stile-box img {
   max-width: 100%;
   height: auto;
@@ -346,7 +311,6 @@ section {
   transform: scale(1.05);
 }
 
-/* Titolo */
 .stile-box h3 {
   font-size: 20px;
   font-weight: 600;
@@ -356,11 +320,10 @@ section {
 }
 
 .stile-box h3:hover {
-  color: #ff9800; /* Tocco dinamico */
+  color: #ff9800;
   cursor: default;
 }
 
-/* Link */
 .stile-box a {
   font-size: 18px;
   font-weight: 600;
@@ -369,19 +332,18 @@ section {
   display: inline-block;
   padding: 12px 25px;
   border: 2px solid transparent;
-  border-radius: 8px; /* Angoli più arrotondati */
-  background: linear-gradient(135deg, #ffc107, #ff9800); /* Gradiente moderno */
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ffc107, #ff9800);
   transition: all 0.25s ease-in-out;
   margin-top: 10px;
 }
 
 .stile-box a:hover {
-  background: linear-gradient(135deg, #e68900, #c96d00); /* Hover sul bottone */
+  background: linear-gradient(135deg, #e68900, #c96d00);
   color: #fff;
   transform: translateY(-3px);
 }
 
-/* Effetto animazione */
 .stile-box a:focus,
 .stile-box a:hover {
   outline: none;
@@ -389,10 +351,9 @@ section {
 }
 
 /* Responsività */
-
 @media (max-width: 1024px) {
   .stili-wrapper {
-    flex-wrap: wrap; /* Permette il ritorno a capo su tablet */
+    flex-wrap: wrap;
     justify-content: center;
   }
 }
@@ -415,7 +376,7 @@ section {
   }
 
   .stile-box {
-    width: 90%; /* Ogni card occupa quasi tutta la larghezza */
+    width: 90%;
     max-width: 350px;
     margin: 0 auto;
   }
@@ -441,7 +402,6 @@ section {
     padding: 10px 20px;
   }
 }
-
 
   
 /* === Icone Ambienti - Estetica Migliorata === */

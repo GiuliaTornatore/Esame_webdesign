@@ -94,20 +94,26 @@
   <div class="slider">
     <div class="slide active">
       <a href="bagnocontemporaneo.html" class="slide-link">
-        <img src="img/CAROSELLI/bagno-contemporaneo.jpeg" alt="Camera Contemporanea">
+        <img src="img/CAROSELLI/bagno-contemporaneo.jpeg" alt="Bagno Contemporanea">
         <span class="caption">Bagno Contemporaneo</span>
       </a>
     </div>
     <div class="slide">
       <a href="bagnominimal.html" class="slide-link">
-        <img src="img/CAROSELLI/bagno-minimal.jpeg" alt="Camera Minimal">
+        <img src="img/CAROSELLI/bagno-minimal.jpeg" alt="Bagno Minimal">
         <span class="caption">Bagno Minimal</span>
       </a>
     </div>
     <div class="slide">
       <a href="bagnoindustriale.html" class="slide-link">
-        <img src="img/CAROSELLI/bagno-industriale.jpeg" alt="Cameretta Industriale">
+        <img src="img/CAROSELLI/bagno-industriale.jpeg" alt="Bagno Industriale">
         <span class="caption">Bagno Industriale</span>
+      </a>
+    </div>
+    <div class="slide">
+      <a href="bagnoclassico.html" class="slide-link">
+        <img src="img/CAROSELLI/cucina-classica.jpeg" alt="Bagno Classica">
+        <span class="caption">Bagno Classico</span>
       </a>
     </div>
   </div>
@@ -120,10 +126,12 @@
   const slides = document.querySelectorAll(".slide");
 
   function moveSlide(n) {
-      slides[currentIndex].classList.remove("active");
-      currentIndex = (currentIndex + n + slides.length) % slides.length;
-      slides[currentIndex].classList.add("active");
+    slides[currentIndex].classList.remove("active");
+    currentIndex = (currentIndex + n + slides.length) % slides.length;
+    slides[currentIndex].classList.add("active");
   }
+
+  
 </script>
 
   <section class="frame-container">
@@ -243,7 +251,7 @@
   </section>
 
   <section class="altri-ambienti">
-    <h2>Altri ambienti in stile classico</h2>
+    <h2>Altri ambienti in stile Classico</h2>
     <div class="ambienti-container">
      
       <div class="ambiente-card">

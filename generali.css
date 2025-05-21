@@ -3,8 +3,15 @@ body {
   padding: 0;
   font-family: 'Arial', sans-serif;
   background-color: #b3b3b3;
+  max-width: 100vw; /* La larghezza massima deve essere il 100% della larghezza della finestra */
+    font-size: 1rem; /* Imposta una dimensione di base */
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4 {
+  font-size: 2rem; /* Usa rem per le dimensioni relative */
+}
 
 
 /* Contenitore slider */
@@ -176,6 +183,7 @@ body {
     border-radius: 0; /* Per evitare spazi tondeggianti sui lati */
     max-width: 100vw;
     width: 100%;
+    margin: 60px auto;
   }
 
   .slide img {
@@ -200,19 +208,11 @@ body {
 }
 
 
-
-
-
-
-
-
 .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto; 
   width: 100%;
+  max-width: 1200px; /* Imposta un limite massimo di larghezza per evitare che il contenuto sia troppo largo */
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* header */
@@ -345,6 +345,11 @@ body {
 
 /* RESPONSIVE NAV */
 @media (max-width: 768px) {
+
+ .header {
+    padding: 10px;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -564,7 +569,7 @@ body {
   }
 
   .stile-content h2 {
-    font-size: 1.4rem;
+     font-size: 1.55rem;
   }
 
   .stile-sidebar h3 {
@@ -665,7 +670,7 @@ body {
 }
 
 .ambienti h2 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; 
     font-weight: bold; 
     color: #333333; 
     margin-bottom: 60px;
@@ -684,6 +689,7 @@ body {
 }
 
 .card-ambiente {
+    margin-top: 2rem; /* Usa unità relative per i margini */
     display: flex;
     flex-direction: column;
     background-color: #ffffff; 
@@ -707,8 +713,8 @@ body {
 
 .img-container img {
     width: 100%;
-    height: 250px; 
-    object-fit: cover;
+  height: auto; /* Per garantire che l'immagine si adatti proporzionalmente */
+  object-fit: cover; /* Mantieni l'immagine centrata senza distorsioni */
     transition: transform 0.3s ease;
 }
 
@@ -767,16 +773,16 @@ body {
     }
 
     .ambienti h2 {
-        font-size: 1.5rem; 
-        letter-spacing: 2px;
+       font-size: 1.5rem;
+    letter-spacing: 2px;
     }
 
     .card-ambiente {
-        max-width: 100%; 
+        max-width: 100%;
     }
 
     .btn-progetto {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 }
 
@@ -876,7 +882,7 @@ body {
 
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
+   flex-direction: column;
     align-items: flex-start;
     padding-left: 1rem; 
   }
