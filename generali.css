@@ -660,132 +660,95 @@ body {
 
 
 
-  .ambienti {
-    background-color: #dcdcdc; 
-    max-width: 100%;
-    padding: 80px 10%; 
-    box-sizing: border-box;
-    text-align: center;
-    color: #333; 
-}
-
-.ambienti h2 {
-    font-size: 2.5rem; 
-    font-weight: bold; 
-    color: #333333; 
-    margin-bottom: 60px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    line-height: 1.2;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); 
-}
-
-.ambienti-grid {
+  /* === Card Ambienti === */
+  .ambienti-grid {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    margin-top: 0;
-    justify-items: center; 
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  .titolo-ambienti,
+.ambienti-stile {
+  text-align: center;
+  margin-left: 0;        /* Rimuove l'allineamento a sinistra */
+  margin-right: 0;
 }
 
-.card-ambiente {
-    margin-top: 2rem; /* Usa unità relative per i margini */
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff; 
-    border-radius: 15px; 
+.titolo-ambienti {
+  font-size: 20px;
+  color: #444;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.ambienti-stile {
+  font-size: 40px;
+  color: #333;
+  font-weight: 700;
+  margin-top: 10px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  margin-bottom: 40px;
+}
+
+  
+  .card-ambiente {
+    background: #fff;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.2); 
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    max-width: 350px; 
-}
-
-.card-ambiente:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); 
-    background-color: #f8f8f8; 
-}
-
-.img-container {
-    width: 100%; 
-    overflow: hidden; 
-}
-
-.img-container img {
-    width: 100%;
-  height: auto; /* Per garantire che l'immagine si adatti proporzionalmente */
-  object-fit: cover; /* Mantieni l'immagine centrata senza distorsioni */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
     transition: transform 0.3s ease;
-}
-
-.card-ambiente:hover .img-container img {
-    transform: scale(1.05); 
-}
-
-.ambiente-info {
-    padding: 25px;
-    text-align: left;
-    background-color: #f4f4f4; 
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-}
-
-.ambiente-info h3 {
-    font-size: 1.9rem;
-    color: #333333;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.ambiente-info p {
-    font-size: 1rem;
-    color: #555555; 
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.btn-progetto {
-    padding: 12px 25px;
-    background-color: #7da39c;
-    color: #fff;
-    border-radius: 30px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .card-ambiente:hover {
+    transform: translateY(-5px);
+  }
+  
+  .img-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .ambiente-info {
+    padding: 20px;
+  }
+  .ambienti-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Due colonne fisse */
+    gap: 40px;
+    margin-top: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  .ambiente-info h3 {
+    margin-bottom: 10px;
+    font-size: 1.25rem;
+  }
+  
+  .btn-progetto {
     display: inline-block;
-    font-size: 1.1rem;
     margin-top: 15px;
-}
-
-.btn-progetto:hover {
-    background-color: #678983;
-    transform: scale(1.1); 
-}
-
-.btn-progetto:active {
-    transform: scale(1.05); 
-}
-
-
-@media (max-width: 768px) {
-    .ambienti {
-        padding: 60px 5%; 
+    color: #b18c5c;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .btn-progetto:hover {
+    color: #8e6d42;
+  }
+  @media (max-width: 768px) {
+    .ambienti-grid {
+      grid-template-columns: 1fr; /* 1 colonna su schermi piccoli */
     }
-
-    .ambienti h2 {
-       font-size: 1.5rem;
-    letter-spacing: 2px;
-    }
-
-    .card-ambiente {
-        max-width: 100%;
-    }
-
-    .btn-progetto {
-        font-size: 1rem;
-    }
-}
-
+  }
+  
 
 .footer {
   background-color: #1c1c1c; 
