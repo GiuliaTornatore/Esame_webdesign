@@ -406,7 +406,7 @@ h6.titolo-mini {
 }
 
   
-/* === Icone Ambienti - Estetica Migliorata === */
+/* === Icone Ambienti */
 .ambienti-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -812,4 +812,19 @@ h6.titolo-mini {
   .contenuto {
     font-size: 1.5rem;
   }
+}
+
+.guida-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  padding: 0 20px;
+  word-break: normal;
+  hyphens: auto;
+  text-align: justify;
+  p {
+  margin-bottom: 1.2em;
+}
+
 }
