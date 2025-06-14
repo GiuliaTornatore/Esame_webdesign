@@ -9,7 +9,7 @@
   }
 
   body {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Creato Display', sans-serif;
     background-color: #c5c5c5;
     color: #474747;
     line-height: 1.6;
@@ -281,7 +281,7 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   text-align: center; /* oppure left, right */
   padding: 20px;
   background-color: #f2f2f2;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Creato Display', sans-serif;
 }
 
 footer p {

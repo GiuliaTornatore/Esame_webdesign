@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Creato Display', sans-serif;
   background-color: #b3b3b3;
   max-width: 100vw; /* La larghezza massima deve essere il 100% della larghezza della finestra */
     font-size: 1rem; /* Imposta una dimensione di base */
@@ -226,7 +226,7 @@ h1, h2, h3, h4 {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Creato Display', sans-serif;
   background-color: #f8f9fa;
   color: #333;
 }
@@ -436,7 +436,7 @@ body {
   transition: transform 0.3s;
   flex: 2;
   max-width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Creato Text', sans-serif;
 }
 
 .stile-sidebar {
@@ -447,14 +447,14 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   border-left: 3px solid #e0e0e0;
   max-width: 400px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Creato Text', sans-serif;
   transition: box-shadow 0.3s ease;
   margin-left: 40px;
   margin-right: 40px;
 }
 
 .stile-content h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Cleato Headline', sans-serif;
   font-size: 2.5rem;
   color: #2a2a2a;
   margin-bottom: 1.5rem;
@@ -469,11 +469,10 @@ body {
 }
 
 
-
 .stile-sidebar h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Creato Text', sans-serif;
   font-size: 1.8rem;
-  color: #444;
+  color: #203262;
   margin-bottom: 1.2rem;
   font-weight: 600;
 }
@@ -504,6 +503,28 @@ body {
 .stile-sidebar:hover {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
+.link-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 25px;
+  color: #2d7977;
+  font-weight: bold;
+}
+
+.sidebar-link {
+  text-decoration: none;
+  color: #2980b9;
+  font-weight: 600;
+  font-size: 1.05rem;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.sidebar-link:hover {
+  color: #1a5a8a;
+  text-decoration: underline;
+}
+
 
 @media (max-width: 768px) {
   .stile-container {
@@ -755,7 +776,7 @@ body {
   background-color: #1c1c1c; 
   color: #eaeaea; 
   padding: 60px 10%;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Creato Display', sans-serif;
   border-top: 4px solid #444; 
 }
 

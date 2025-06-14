@@ -9,7 +9,7 @@
 
 
 body {
- font-family: 'Playfair Display', sans-serif;
+ font-family: 'Creato Display', sans-serif;
   background-color: #f7f7f7;
   color: #333;
 }
@@ -45,13 +45,13 @@ body {
 /* Tipografia migliorata */
 .stile-container h2,
 .stile-container h3 {
-   font-family: 'Playfair Display', serif;
+   font-family: 'Creato Headline', sans-serif;
   color: #2c2c2c;
   margin-bottom: 1rem;
 }
 
 .stile-container p {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Creato Text', sans-serif;
   line-height: 1.8;
   color: #444;
   margin-bottom: 1.5rem;
@@ -221,7 +221,7 @@ body {
   background-color: #1c1c1c;
   color: #eaeaea;
   padding: 60px 10%;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Creato Display', sans-serif;
   border-top: 4px solid #444;
 }
 
@@ -387,7 +387,7 @@ body {
     line-height: 1.4;
     margin-bottom: 25px;
     color: #444;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Creato Display', serif;
     max-width: 400px;
   }
 }
@@ -779,7 +779,7 @@ body {
 }
 
 body {
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Creato Display', sans-serif;
   background-color: #f8f9fa;
   color: #333;
 }
@@ -960,7 +960,7 @@ body {
 .stile-classico-elegante {
     background-color: #f7f6f3;
     padding: 5rem 6%;
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Creato Display', sans-serif;
   }
 
   /* INTRODUZIONE - Titolo e descrizione */
@@ -1011,7 +1011,7 @@ body {
 
   /* Titoli dei dettagli */
   .dettaglio-elegante h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Creato Headline', serif;
     font-size: 1.25rem;
     color: #3b3a36;
     margin-bottom: 1rem;
@@ -1077,13 +1077,13 @@ body {
   /* Tipografia migliorata */
   .stile-container h2,
   .stile-container h3 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Creato Headline', serif;
     color: #2c2c2c;
     margin-bottom: 1rem;
   }
 
   .stile-container p {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Creato Text', sans-serif;
     line-height: 1.8;
     color: #444;
     margin-bottom: 1.5rem;

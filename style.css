@@ -7,7 +7,7 @@
 
 /* Corpo e base */
 body {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Creato Display', serif;
   background-color: #f8f9fa;
   color: #333;
   line-height: 1.8;
@@ -197,7 +197,7 @@ section {
 
 /* Titoli */
 h2 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Creato Headline', serif;
   font-size: 2rem;
   margin-bottom: 20px;
   color: #1e1e1e;
@@ -207,7 +207,7 @@ h2 {
 h6.titolo-mini {
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: #999;
+  color: #ffffff;
   margin-bottom: 8px;
   line-height: 1.6;
 }
@@ -228,7 +228,7 @@ h6.titolo-mini {
 .btn-glow {
   display: inline-block;
   margin-top: 20px;
-  background-color: #b18c5c;
+  background-color: #5E7A7C;
   color: #fff;
   padding: 12px 24px;
   border-radius: 4px;
@@ -237,7 +237,7 @@ h6.titolo-mini {
 }
 
 .btn-glow:hover {
-  background-color: #a3783f;
+  background-color: #7dcbd1;
 }
 
 /* Sezione Design */
@@ -322,7 +322,7 @@ h6.titolo-mini {
 }
 
 .stile-box h3:hover {
-  color: #ff9800;
+  color: #83cbd0;
   cursor: default;
 }
 
@@ -335,13 +335,13 @@ h6.titolo-mini {
   padding: 12px 25px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background: linear-gradient(135deg, #ffc107, #ff9800);
+  background: linear-gradient(135deg, #a3d8dc, #5E7A7C);
   transition: all 0.25s ease-in-out;
   margin-top: 10px;
 }
 
 .stile-box a:hover {
-  background: linear-gradient(135deg, #e68900, #c96d00);
+  background: linear-gradient(135deg, #a3d8dc, #5E7A7C);
   color: #fff;
   transform: translateY(-3px);
 }
@@ -349,7 +349,7 @@ h6.titolo-mini {
 .stile-box a:focus,
 .stile-box a:hover {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(255, 186, 0, 0.5);
+  box-shadow: 0 0 0 3px #4e8083(255, 186, 0, 0.5);
 }
 
 /* Responsività */
@@ -425,7 +425,7 @@ h6.titolo-mini {
   margin-top: 40px;
   text-align: center;
   letter-spacing: 0.6px;
-  font-family: 'Playfair Display', serif;
+  font-family: 'Creato Display', serif;
 }
 
 /* Singolo box */
@@ -479,7 +479,7 @@ h6.titolo-mini {
   font-weight: 600;
   margin: 0;
   color: #333;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Creato Text', sans-serif;
 }
 
 /* === Responsive Design === */
@@ -615,13 +615,13 @@ h6.titolo-mini {
   .btn-progetto {
     display: inline-block;
     margin-top: 15px;
-    color: #b18c5c;
+    color: #417aca;
     font-weight: 600;
     transition: color 0.3s ease;
   }
   
   .btn-progetto:hover {
-    color: #8e6d42;
+    color: #628d8f;
   }
   @media (max-width: 768px) {
     .ambienti-grid {
@@ -634,7 +634,7 @@ h6.titolo-mini {
     background-color: #1c1c1c; 
     color: #eaeaea; 
     padding: 60px 10%;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Creato', sans-serif;
     border-top: 4px solid #444; 
   }
   
@@ -767,7 +767,7 @@ h6.titolo-mini {
 
 .sezione-immagine {
   position: relative;
-  background-image: url('img/CAROSELLI/salottoM3.jpeg'); 
+  background-image: url('img/HOME PAGE IMM/home-copertina.jpg'); 
   background-size: cover;
   background-position: center;
   height: 400px;
@@ -792,7 +792,7 @@ h6.titolo-mini {
   position: relative;
   z-index: 2;
   font-size: 2rem;
-  font-family: 'Playfair Display', sans-serif;
+  font-family: 'Creato Display', sans-serif;
 }
 @media (max-width: 768px) {
   .sezione-immagine {
