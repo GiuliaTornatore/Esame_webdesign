@@ -316,7 +316,7 @@ h6.titolo-mini {
 .stile-box h3 {
   font-size: 20px;
   font-weight: 600;
-  color: #333;
+  color: #919090;
   margin-bottom: 15px;
   transition: color 0.2s ease-in-out;
 }
@@ -335,14 +335,14 @@ h6.titolo-mini {
   padding: 12px 25px;
   border: 2px solid transparent;
   border-radius: 8px;
-  background: linear-gradient(135deg, #a3d8dc, #5E7A7C);
+  background: linear-gradient(135deg, #a3d8dc, #87aaad);
   transition: all 0.25s ease-in-out;
   margin-top: 10px;
 }
 
 .stile-box a:hover {
-  background: linear-gradient(135deg, #a3d8dc, #5E7A7C);
-  color: #fff;
+  background: linear-gradient(135deg, #81d6dc, #d8eced);
+  color: #4584ea;
   transform: translateY(-3px);
 }
 
