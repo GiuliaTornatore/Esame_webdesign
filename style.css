@@ -197,7 +197,7 @@ section {
 
 /* Titoli */
 h2 {
-  font-family: 'Creato Headline', serif;
+  font-family: 'Creato Headline', sans-serif;
   font-size: 2rem;
   margin-bottom: 20px;
   color: #1e1e1e;
@@ -514,6 +514,19 @@ h6.titolo-mini {
 
   .ambiente-box {
     max-width: 90%;
+  }
+  .guida-ambienti h2 {
+
+    font-family: 'Creato Display', sans-serif;
+    letter-spacing: normal;
+    font-size: 22px;
+    margin-bottom: 40px;
+    color: #94dbdf;
+  }
+  .contenuto h1 {
+font-family: 'Creato Display', sans-serif;
+    letter-spacing: normal;
+    font-size: 30px;
   }
 }
 
